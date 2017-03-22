@@ -1,9 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
     tools:context="com.example.lg.work3.Reservation">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="레스토랑 예약을 시작하려면 아래를 클릭하세요"/>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Switch
+            android:checked="false"
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시작함"/>
+        <TextView
+            android:paddingLeft="70dp"
+            android:id="@+id/progress"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예약시작 경과시간 : "
+            android:textColor="#6060fc" />
+        <Chronometer
+            android:textColor="#6060fc"
+            android:id="@+id/chrono"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <FrameLayout
+        android:background="#fce4e4"
+        android:id="@+id/frame"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:padding="5dp">
+        <DatePicker
+            android:visibility="gone"
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+        </DatePicker>
+        <TimePicker
+            android:id="@+id/time"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TimePicker>
+        <GridLayout
+            android:id="@+id/num"
+            android:visibility="gone"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_columnWeight="0.6"
+                android:text="성인"/>
+            <EditText
+                android:layout_columnWeight="1.4"
+                android:hint="인원 수 입력"
+                android:id="@+id/adult"
+                android:inputType="number"/>
+            <TextView
+                android:layout_columnWeight="0.6"
+                android:text="청소년"/>
+            <EditText
+                android:layout_columnWeight="1.4"
+                android:hint="인원 수 입력"
+                android:id="@+id/childhood"
+                android:inputType="number"/>
+            <TextView
+                android:layout_columnWeight="0.6"
+                android:text="어린이"/>
+            <EditText
+                android:layout_columnWeight="1.4"
+                android:hint="인원 수 입력"
+                android:id="@+id/kids"
+                android:inputType="number"/>
+        </GridLayout>
+        <GridLayout
+            android:background="#ffffff"
+            android:visibility="gone"
+            android:id="@+id/result_pan"
+            android:columnCount="2"
+            android:rowCount="7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:textSize="20dp"
+                android:text="예약 결과는 다음과 같습니다."
+                android:textColor="#6060fc"
+                android:layout_columnSpan="2"/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:text="날짜:"/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:id="@+id/date_result"
+                android:text="입력이 없습니다."/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:text="시간:"/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:id="@+id/time_result"
+                android:text="입력이 없습니다."/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:text="성인:"/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:id="@+id/adult_result"
+                android:text="입력이 없습니다."/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:text="청소년:"/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:id="@+id/childhood_result"
+                android:text="입력이 없습니다."/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:text="어린이:"/>
+            <TextView
+                android:layout_columnWeight="1"
+                android:id="@+id/kids_result"
+                android:text="입력이 없습니다."/>
+            <TextView
+                android:textSize="15dp"
+                android:layout_columnSpan="2"
+                android:text="예약되었습니다."
+                android:textColor="#9c4e4e" />
+        </GridLayout>
+    </FrameLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/btn_group"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/prev"
+            android:onClick="mClick"
+            android:enabled="false"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이전"/>
+        <Button
+            android:id="@+id/next"
+            android:onClick="mClick"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다음"/>
+    </LinearLayout>
+
+</LinearLayout>

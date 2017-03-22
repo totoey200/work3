@@ -7,12 +7,14 @@
     tools:context="com.example.lg.work3.MainActivity">
 
     <Button
+        android:onClick="onMyClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/grade_cal"
         android:text="학점 계산기"/>
 
     <Button
+        android:onClick="onMyClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/reservation"

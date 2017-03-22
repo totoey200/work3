@@ -17,6 +17,7 @@ public class GradeCal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grade_cal);
+        setTitle("학점 계산기");
         init();
 
     }
@@ -33,13 +34,7 @@ public class GradeCal extends AppCompatActivity {
         cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sco_ko = ko.getText().toString();
-                String sco_math = math.getText().toString();
-                String sco_eng = eng.getText().toString();
-                ko.setText(Integer.toString(cal_check(sco_ko)));
-                math.setText(Integer.toString(cal_check(sco_math)));
-                eng.setText(Integer.toString(cal_check(sco_eng)));
-                int result = cal_check(sco_ko) + cal_check(sco_math) + cal_check(sco_eng);
+                int result = cal_check(ko) + cal_check(math) + cal_check(eng);
                 int average = result/3;
                 score.setText(Integer.toString(result)+"점");
                 avg.setText(Integer.toString(average)+"점");
@@ -59,8 +54,10 @@ public class GradeCal extends AppCompatActivity {
         });
 
     }
-    int cal_check(String num){
+    public int cal_check(EditText view){
+        String num = view.getText().toString();
         if(num.equals("")){
+            view.setText("0");
             return 0;
         }
         else{
