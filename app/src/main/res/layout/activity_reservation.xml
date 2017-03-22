@@ -97,7 +97,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
-                android:textSize="20dp"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textStyle="bold"
                 android:text="예약 결과는 다음과 같습니다."
                 android:textColor="#6060fc"
                 android:layout_columnSpan="2"/>
@@ -137,7 +140,7 @@
                 android:id="@+id/kids_result"
                 android:text="입력이 없습니다."/>
             <TextView
-                android:textSize="15dp"
+                android:textSize="20dp"
                 android:layout_columnSpan="2"
                 android:text="예약되었습니다."
                 android:textColor="#9c4e4e" />

@@ -94,7 +94,6 @@
                 android:text="학점"/>
             <ImageView
                 android:layout_weight="1.4"
-                android:src="@drawable/letter_a_red"
                 android:id="@+id/grade"/>
         </TableRow>
     </TableLayout>

@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GradeCal extends AppCompatActivity {
     EditText ko,math,eng;
@@ -50,6 +51,8 @@ public class GradeCal extends AppCompatActivity {
                 score.setText("0점");
                 avg.setText("0점");
                 grade.setVisibility(View.GONE);
+                Toast.makeText(getApplicationContext(),"초기화되었습니다.",
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
